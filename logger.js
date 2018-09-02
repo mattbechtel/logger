@@ -77,7 +77,7 @@ function formatFilename(filename)
  */
 Logger.error = (msg, filename) =>
 {
-    if(Logger.logMode === 'error' || Logger.logMode === 'debug')
+    if(Logger.logMode === 'error' || Logger.logMode === 'debug' || Logger.logMode === 'info')
     {
         var writeMsg = typeof msg != String ? JSON.stringify(msg) : msg;
 
