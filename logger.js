@@ -26,7 +26,7 @@ try
 }
 catch(err)
 {
-    console.log("Error creating write stream to one of the specified logging files \n", err);
+    console.err("Error creating write stream to one of the specified logging files \n", err);
 }
 
 /**
@@ -82,7 +82,7 @@ Logger.error = (msg, filename) =>
         var writeMsg = typeof msg != String ? JSON.stringify(msg) : msg;
 
         var formattedError = filename ? "[ERROR " + new Date().toISOString() + " " + formatFilename(filename) + "] " : "[ERROR " + new Date().toISOString() + "] ";
-        console.log(formattedError, msg);
+        console.err(formattedError, msg);
 
         if(Logger.errLogFile)
         {
